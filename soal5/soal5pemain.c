@@ -135,7 +135,7 @@ void *display(void *ptr){
 				return 0;
 			}
 		}else if(ba == 1){
-			printf("Battle Mode");
+			printf("Battle Mode\n");
 			printf("Monster's Health : %d\n", health_status);
 			printf("Enemy's Health : %d\n", lawan);
 			printf("Choices\n");
