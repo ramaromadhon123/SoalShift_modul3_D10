@@ -3,11 +3,11 @@
 # Soal 1
 *Soal:*
 Buatlah program C yang bisa menghitung faktorial secara parallel lalu menampilkan hasilnya secara berurutan
-Contoh:
-	./faktorial 5 3 4
-	3! = 6
-	4! = 24
-	5! = 120
+Contoh:</br>
+	./faktorial 5 3 4</br>
+	3! = 6</br>
+	4! = 24</br>
+	5! = 120</br>
 
 _Solusi:_
 - Fungsi Faktorial
@@ -57,29 +57,29 @@ void selectionsort(int a[], int n)
 
 # Soal 2
 _Soal:_
-Pada suatu hari ada orang yang ingin berjualan 1 jenis barang secara private, dia memintamu membuat program C dengan spesifikasi sebagai berikut:
-	- Terdapat 2 server: server penjual dan server pembeli
-	- 1 server hanya bisa terkoneksi dengan 1 client
-	- Server penjual dan server pembeli memiliki stok barang yang selalu sama
-	- Client yang terkoneksi ke server penjual hanya bisa menambah stok
-	- Cara menambah stok: client yang terkoneksi ke server penjual mengirim string “tambah” ke server lalu stok bertambah 1
-	- Client yang terkoneksi ke server pembeli hanya bisa mengurangi stok
-	- Cara mengurangi stok: client yang terkoneksi ke server pembeli mengirim string “beli” ke server lalu stok berkurang 1
-	- Server pembeli akan mengirimkan info ke client yang terhubung dengannya apakah transaksi berhasil atau tidak berdasarkan ketersediaan stok
-	- Jika stok habis maka client yang terkoneksi ke server pembeli akan mencetak “transaksi gagal”
-	- Jika stok masih ada maka client yang terkoneksi ke server pembeli akan mencetak “transaksi berhasil”
-	- Server penjual akan mencetak stok saat ini setiap 5 detik sekali
-	- Menggunakan thread, socket, shared memory
+Pada suatu hari ada orang yang ingin berjualan 1 jenis barang secara private, dia memintamu membuat program C dengan spesifikasi sebagai berikut:</br>
+	- Terdapat 2 server: server penjual dan server pembeli</br>
+	- 1 server hanya bisa terkoneksi dengan 1 client</br>
+	- Server penjual dan server pembeli memiliki stok barang yang selalu sama</br>
+	- Client yang terkoneksi ke server penjual hanya bisa menambah stok</br>
+	- Cara menambah stok: client yang terkoneksi ke server penjual mengirim string “tambah” ke server lalu stok bertambah 1</br>
+	- Client yang terkoneksi ke server pembeli hanya bisa mengurangi stok</br>
+	- Cara mengurangi stok: client yang terkoneksi ke server pembeli mengirim string “beli” ke server lalu stok berkurang 1</br>
+	- Server pembeli akan mengirimkan info ke client yang terhubung dengannya apakah transaksi berhasil atau tidak berdasarkan ketersediaan stok</br>
+	- Jika stok habis maka client yang terkoneksi ke server pembeli akan mencetak “transaksi gagal”</br>
+	- Jika stok masih ada maka client yang terkoneksi ke server pembeli akan mencetak “transaksi berhasil”</br>
+	- Server penjual akan mencetak stok saat ini setiap 5 detik sekali</br>
+	- Menggunakan thread, socket, shared memory</br>
 
 _Solusi:_
-Perlu membuat 4 file yang berbeda, yaitu:
-a. Penjual_Server
-   Dapat membaca pesan dari client. Jika pesan tersebut adalah 'tambah', maka dapat menambah nilai stok.	  
-b. Penjual_Client
-c. Pembeli_Server
-   Dapat memeriksa pesan yang dikirim client. Memeriksa pesan 'beli' dan membandingkannya dengan nilai stok saat ini.
-   Akan menampilkan 'transaksi gagal' jika nilai stok habis, dan menampilkan 'transaksi berhasil' jika stok masih ada.
-d. Pembeli_Client
+Perlu membuat 4 file yang berbeda, yaitu:</br>
+a. Penjual_Server</br>
+   Dapat membaca pesan dari client. Jika pesan tersebut adalah 'tambah', maka dapat menambah nilai stok.</br>
+b. Penjual_Client</br>
+c. Pembeli_Server</br>
+   Dapat memeriksa pesan yang dikirim client. Memeriksa pesan 'beli' dan membandingkannya dengan nilai stok saat ini.</br>
+   Akan menampilkan 'transaksi gagal' jika nilai stok habis, dan menampilkan 'transaksi berhasil' jika stok masih ada.</br>
+d. Pembeli_Client</br>
  
 # Soal 3
 _Soal:_
