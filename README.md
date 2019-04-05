@@ -4,10 +4,10 @@
 *Soal:*
 Buatlah program C yang bisa menghitung faktorial secara parallel lalu menampilkan hasilnya secara berurutan
 Contoh:
-    ./faktorial 5 3 4
-    3! = 6
-    4! = 24
-    5! = 120
+	./faktorial 5 3 4
+	3! = 6
+	4! = 24
+	5! = 120
 
 _Solusi:_
 - Fungsi Faktorial
@@ -72,8 +72,15 @@ Pada suatu hari ada orang yang ingin berjualan 1 jenis barang secara private, di
 	- Menggunakan thread, socket, shared memory
 
 _Solusi:_
-
-
+Perlu membuat 4 file yang berbeda, yaitu:
+a. Penjual_Server
+   Dapat membaca pesan dari client. Jika pesan tersebut adalah 'tambah', maka dapat menambah nilai stok.	  
+b. Penjual_Client
+c. Pembeli_Server
+   Dapat memeriksa pesan yang dikirim client. Memeriksa pesan 'beli' dan membandingkannya dengan nilai stok saat ini.
+   Akan menampilkan 'transaksi gagal' jika nilai stok habis, dan menampilkan 'transaksi berhasil' jika stok masih ada.
+d. Pembeli_Client
+ 
 # Soal 3
 _Soal:_
 Agmal dan Iraj merupakan 2 sahabat yang sedang kuliah dan hidup satu kostan, sayangnya mereka mempunyai gaya hidup yang berkebalikan, dimana Iraj merupakan laki-laki yang sangat sehat,rajin berolahraga dan bangun tidak pernah kesiangan sedangkan Agmal hampir menghabiskan setengah umur hidupnya hanya untuk tidur dan ‘ngoding’. Dikarenakan mereka sahabat yang baik, Agmal dan iraj sama-sama ingin membuat satu sama lain mengikuti gaya hidup mereka dengan cara membuat Iraj sering tidur seperti Agmal, atau membuat Agmal selalu bangun pagi seperti Iraj. Buatlah suatu program C untuk menggambarkan kehidupan mereka dengan spesifikasi sebagai berikut:
@@ -102,9 +109,7 @@ if(strcmp(pesan, "All Status") == 0
 }
 ```
 
--
-
-“Agmal Ayo Bangun” menambah WakeUp_Status Agmal sebesar 15 point
+- “Agmal Ayo Bangun” menambah WakeUp_Status Agmal sebesar 15 point
 ```
 else if (strcmp(pesan, "Agmal Ayo Bangun") == 0 && agmal_disable == 0)
 {
