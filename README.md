@@ -10,6 +10,49 @@ Contoh:
     5! = 120
 
 _Solusi:_
+- Fungsi Faktorial
+```
+void* faktorial (void* n)
+{
+	int* a;
+	a = (int*) n;
+	int i, num =  *a;
+	long long temp = 1;
+
+	for(i = 1; i <= num; i++)
+	{
+		temp = temp * i;
+	}
+
+	hasil[num] = temp;
+}
+```
+
+
+- Fungsi sorting: selection sort
+```
+void sort_swap (int *min1, int *min2)
+{
+	int temp = *min1;
+	*min1 = *min2;
+	*min2  = temp;
+}
+
+void selectionsort(int a[], int n)
+{
+	int i, j, minimum;
+	for (i = 1; i < n-1; i++)
+	{
+		minimum = i;
+
+        	for (j = i+1; j < n; j++)
+          		if (a[j] < a[minimum])
+            			minimum = j;
+
+		sort_swap(&a[minimum], &a[i]);
+	}
+}
+```
 
 
 # Soal 2
@@ -45,10 +88,11 @@ int WakeUp_Status = 0; //Agmal
 int Spirit_Status = 100; //Iraj
 ```
 
-Terdapat 3 Fitur utama
-All Status, yaitu menampilkan status kedua sahabat
-Ex: Agmal WakeUp_Status = 75 
-Iraj Spirit_Status = 30
+- Terdapat 3 Fitur utama
+  - All Status, yaitu menampilkan status kedua sahabat
+    Ex: Agmal WakeUp_Status = 75
+    Iraj Spirit_Status = 30
+    
 ```
 if(strcmp(pesan, "All Status") == 0
 {
@@ -58,6 +102,8 @@ if(strcmp(pesan, "All Status") == 0
 }
 ```
 
+-
+
 “Agmal Ayo Bangun” menambah WakeUp_Status Agmal sebesar 15 point
 ```
 else if (strcmp(pesan, "Agmal Ayo Bangun") == 0 && agmal_disable == 0)
@@ -66,7 +112,9 @@ else if (strcmp(pesan, "Agmal Ayo Bangun") == 0 && agmal_disable == 0)
             countbangun++;
 
 ```
-“Iraj Ayo Tidur” mengurangi Spirit_Status Iraj sebanyak 20 point
+
+
+- “Iraj Ayo Tidur” mengurangi Spirit_Status Iraj sebanyak 20 point
 ```
 else if(strcmp(pesan, "Iraj Ayo Tidur") == 0 && iraj_disable == 0)
 {
@@ -74,8 +122,8 @@ else if(strcmp(pesan, "Iraj Ayo Tidur") == 0 && iraj_disable == 0)
             counttidur++;
 ```
 
-Terdapat Kasus yang unik dimana:
-Jika Fitur “Agmal Ayo Bangun” dijalankan sebanyak 3 kali, maka Fitur “Iraj Ayo Tidur” Tidak bisa dijalankan selama 10 detik (Dengan mengirim pesan ke sistem “Fitur Iraj Ayo Tidur disabled 10 s”)
+  Terdapat Kasus yang unik dimana:
+- Jika Fitur “Agmal Ayo Bangun” dijalankan sebanyak 3 kali, maka Fitur “Iraj Ayo Tidur” Tidak bisa dijalankan selama 10 detik (Dengan mengirim pesan ke sistem “Fitur Iraj Ayo Tidur disabled 10 s”)
 ```
 if(countbangun == 3)
 {
@@ -94,7 +142,8 @@ if(iraj_disable == 1) printf("Fitur Iraj Ayo Tidur disabled 10 s\n");
 
 ```
 
-Jika Fitur  “Iraj Ayo Tidur” dijalankan sebanyak 3 kali, maka Fitur “Agmal Ayo Bangun” Tidak bisa dijalankan selama 10 detik (Dengan mengirim pesan ke sistem “Agmal Ayo Bangun disabled 10 s”)
+
+- Jika Fitur  “Iraj Ayo Tidur” dijalankan sebanyak 3 kali, maka Fitur “Agmal Ayo Bangun” Tidak bisa dijalankan selama 10 detik (Dengan mengirim pesan ke sistem “Agmal Ayo Bangun disabled 10 s”)
 ```
 if(counttidur == 3)
 {
@@ -112,9 +161,10 @@ void *WakeUp_stun(void *argv)
 if(agmal_disable == 1) printf("Fitur Agmal Ayo Bangun disabled 10 s\n");
 ```
 
+
 Program akan berhenti jika Salah Satu :
-WakeUp_Status Agmal >= 100 (Tampilkan Pesan “Agmal Terbangun,mereka bangun pagi dan berolahraga”)
-Spirit_Status Iraj <= 0 (Tampilkan Pesan “Iraj ikut tidur, dan bangun kesiangan bersama Agmal”)
+- WakeUp_Status Agmal >= 100 (Tampilkan Pesan “Agmal Terbangun,mereka bangun pagi dan berolahraga”)
+- Spirit_Status Iraj <= 0 (Tampilkan Pesan “Iraj ikut tidur, dan bangun kesiangan bersama Agmal”)
 ```
 if(WakeUp_Status >= 100)
 {
